@@ -1,0 +1,9 @@
+
+<div class="EmptySearch" ng-if="directiveItems.items.length == 0 || directiveItems.items.length == 219" >
+  Nothing found.
+</div>
+<ul>
+  <li ng-if="directiveItems.items.length>0 && directiveItems.items.length < 219 " ng-repeat="item in directiveItems.items" > {{directiveItems.items[$index].short_name}}: {{directiveItems.items[$index].name}} ({{directiveItems.items[$index].description}})
+    <div class="btn btn-primary" id="btn-btn-secondary" ng-click="directiveItems.eraseElement({index: $index});">Erase from list</div>
+  </li>
+</ul>

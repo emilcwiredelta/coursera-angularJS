@@ -60,6 +60,7 @@ function MenuSearchService ($http, ApiBasePath) {
   var itemsfiltered = [];
 
   service.getMatchedMenuItems = function(searchTerm) {
+    console.log(ApiBasePath);
     var response = $http({
       method: "GET",
       url: (ApiBasePath + "/menu_items.json")
@@ -68,28 +69,13 @@ function MenuSearchService ($http, ApiBasePath) {
   };
 
 
-    // old:
-  //   .then(function (response) {
-  //     itemsUnfiltered = response.data;
-  //     itemsfiltered = filterItems(itemsUnfiltered.menu_items,searchTerm);
-  //     // console.log('inside loop');
-  //   }).catch(function (error) {
-  //     console.log("something went wrong: " + error);
-  //   }).then(function () {
-  //   // console.log('outside loop');
-  //   // console.log(itemsfiltered);
-  //   return itemsfiltered  ;
-  //   })
-  // };
-
-
 
   service.filterItems = function(unfilteredObject, searchTerm) {
     var counter = 0;
     var filteredObject = [];
     var i = 0;
     for (i in unfilteredObject) {
-      if (unfilteredObject[i].description.search(searchTerm) != -1 ){
+      if (unfilteredObject[i].description.search(searchTerm.toLowerCase()) != -1 ){
         filteredObject[i-counter] = unfilteredObject[i];
       } else {
         counter++;

@@ -1,0 +1,46 @@
+body {
+  font-size: 1.2em;
+}
+
+.error {
+  color: red;
+  font-weight: bold;
+  display: none;
+}
+
+.loading-icon {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+.active {
+  font-weight: bold;
+}
+
+
+li[ui-sref]:hover {
+  font-weight: bold;
+  cursor: pointer;
+
+
+}
+
+ul {
+  list-style-type: none;
+}
+
+li:hover {
+  cursor:pointer;
+}
+
+.tooltip {
+	display:none;
+	position:absolute;
+	border:1px solid #333;
+	background-color:#161616;
+	border-radius:5px;
+	padding:10px;
+	color:#fff;
+	font-size:12px Arial;
+}

@@ -1,0 +1,11 @@
+<h1>These are the items within your chosen category</h1>
+<a ui-sref="home"> Return to home</a> or <a ui-sref="categories"> return to categories</a>
+<ul>
+  <li ng-repeat="item in $ctrl.items.menu_items"
+      class="masterTooltip"
+      title={{$ctrl.items.menu_items[$index].description}}
+      >
+    {{$ctrl.items.menu_items[$index].short_name}}: {{$ctrl.items.menu_items[$index].name}} 
+
+  </li>
+</ul>

@@ -1,0 +1,10 @@
+<h1>Please select your category of menu items</h1>
+<a ui-sref="home"> Return to home</a>
+<h3>Menu items:</h3>
+<ul>
+  <li ui-sref="items({categoryShortName: $ctrl.categories[$index].short_name})"
+      ng-repeat="item in $ctrl.categories"
+      >
+    {{$ctrl.categories[$index].name}}
+  </li>
+</ul>

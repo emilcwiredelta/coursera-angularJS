@@ -1,0 +1,90 @@
+<div class="container">
+
+  <h1>Please fill out the forms to sign up for the news letter</h1>
+  <form name='newsletregForm' novalidate>
+
+  <!-- First name form -->
+   First name: <br>
+    <input class="formtext" type="text" name="firstname" placeholder="E.g. John"
+    ng-model="signUpCtrl.user.firstname"
+    required>
+
+    <span
+      ng-if="(newsletregForm.firstname.$error.required) && newsletregForm.firstname.$touched">
+      Please fill out your first name
+    </span>
+    <br> <br>
+
+    <!-- Surname form -->
+    Surname: <br>
+      <input class="formtext" type="text" name="surname" placeholder="E.g. Schmidt"
+      ng-model="signUpCtrl.user.surname"
+      required>
+
+      <span
+        ng-if="(newsletregForm.surname.$error.required) && newsletregForm.surname.$touched">
+        Please fill out your surname.
+      </span>
+      <br> <br>
+
+    <!--  Email form -->
+    Email: <br>
+      <input class="formtext" type="email" name="email" placeholder="Email"
+        ng-model="signUpCtrl.user.email"
+        required>
+        <span ng-if="newsletregForm.email.$invalid && newsletregForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+        <br>
+    <!--  phonenumber form-->
+    Phone number: <br>
+      <input class="formtext" type="text" name="phone" placeholder="Eg. 123-456-7899"
+        ng-model="signUpCtrl.user.phonenumber"
+        required>
+          <span ng-if="newsletregForm.phone.$error.required && newsletregForm.phone.$touched">
+          Please fill out your phone number.
+        </span>
+        <br> <br>
+
+    <!--  Favorite menu-->
+    Favorite dish: <br>
+      <input class="formtext" type="text" name="favoritemenu" placeholder="Eg. L1"
+        ng-model="signUpCtrl.user.favoritemenu"
+        required>
+          <span ng-if="newsletregForm.favoritemenu.$error.required && (newsletregForm.favoritemenu.$touched && signUpCtrl.validateCategory(signUpCtrl.user.favoritemenu))">
+          Please fill out your favorite menu.
+        </span>
+          <span ng-if="!signUpCtrl.validateCategory(signUpCtrl.user.favoritemenu) &&
+          newsletregForm.favoritemenu.$touched ">
+          No such menu number exists. Click <span id="listofitems" ng-click="signUpCtrl.setMenuListBoolean(signUpCtrl.menuListVisible);">here</span> to <span ng-if="!signUpCtrl.menuListVisible">see </span><span ng-if="signUpCtrl.menuListVisible">hide </span>list of valid menu items.
+                <div class="MenulistContainer" ng-if="signUpCtrl.menuListVisible">
+                  <div class="menulistHeader">
+                    List of valid menus (use short name, not full name)
+                  </div>
+                  <div class="menuListitems" >
+                    <ul ng-repeat="item in signUpCtrl.menuMenuItems.menu_items"> {{signUpCtrl.menuMenuItems.menu_items[$index].short_name}} ({{signUpCtrl.menuMenuItems.menu_items[$index].name}})   </ul>
+                  </div>
+                </div>
+          </span>
+        <br>
+        <br>
+
+
+
+      <!-- Registration button -->
+      <button class="formtext"
+      ng-disabled="newsletregForm.$invalid && !(signUpCtrl.validateCategory(signUpCtrl.user.favoritemenu))"
+      ng-click="signUpCtrl.submit()">Submit to news letter</button>
+      <div style="margin-top: 10px;" class="AcceptedForm"ng-if="signUpCtrl.completed">
+        Your information has been saved!{{ newsregForm.$valid }}
+      </div>
+
+
+  </form>
+
+
+
+
+
+</div>

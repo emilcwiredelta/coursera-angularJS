@@ -1,0 +1,66 @@
+.loading-indicator {
+    display: block;
+    width: 70px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 40%;
+    z-index: 100;
+    background-color: #FFF;
+}
+
+.loading-indicator img {
+    width: 70px;
+    background-color: #FFF;
+}
+
+.ui-view-placeholder {
+    margin-top: 60px;
+
+}
+
+.MenulistContainer{
+  background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+.menulistHeader {
+  font-weight: bold;
+  margin-bottom: 1vh;
+  margin-top:1vh;
+}
+
+.menuListitems{
+  -moz-column-fill: auto; /* Firefox */
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+ column-count: 3;
+  }
+
+  .AcceptedForm {
+    color:yellow;
+    font-weight: bold;
+    /*background-color: rgba(0,0,0, 0.5)*/
+  }
+
+  /*.ng-touched.ng-valid {
+  border: 2px green solid;
+}*/
+
+/*.ng-touched.ng-invalid {
+  border: 2px red solid;
+}*/
+
+#listofitems {
+  font-weight: bold;
+}
+
+#listofitems:hover {
+  cursor: pointer;
+}
+
+.disabled {
+  background-color: white;
+  color:grey;
+}
